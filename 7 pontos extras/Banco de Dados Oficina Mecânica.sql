@@ -102,17 +102,32 @@ CREATE TABLE PecaEmArmazem (
 );
 
 CREATE TABLE Agendamento (
-	IDAgendamento INT PRIMARY KEY,
-	IDVeiculo INT,
-	DataHoraAgendada DATE,
-	Status VARCHAR(20),
-	FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
+    IDAgendamento INT PRIMARY KEY,
+    IDVeiculo INT,
+    DataHoraAgendada DATE,
+    Status VARCHAR(20),
+    FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
 );
 
 CREATE TABLE Pagamento (
-	IDPagamento DECIMAL(10,2) PRIMARY KEY,
-	IDVeiculo INT,
-	DataHoraAgendada DATE,
-	Status VARCHAR(20),
-	FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
+    IDPagamento DECIMAL(10,2) PRIMARY KEY,
+    IDVeiculo INT,
+    DataHoraAgendada DATE,
+    Status VARCHAR(20),
+    FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
+);
+
+CREATE TABLE Contabilidade (
+    IDPagamento DECIMAL(10,2) PRIMARY KEY,
+    DataPagamento DATE,
+    Descrição VARCHAR(100),
+    TipoDePagamento VARCHAR(50),
+    Valor INT,
+    MetodoDePagamento VARCHAR(50),
+    NumeroDaFatura VARCHAR(100),
+    Fornecedor VARCHAR(100),
+    Funcionário INT,
+    Despesa VARCHAR(100),
+    Observacoes VARCHAR(MAX),
+    FOREIGN KEY (IDPagamento) REFERENCES Pagamento(IDPagamento)
 );
