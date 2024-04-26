@@ -29,6 +29,7 @@ CREATE TABLE RecuperarClientesPorNome (
     DataDoUltimoServico DATE,
     ProximoServicoAgendado DATE,
     Observacao VARCHAR(MAX)
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
 );
 
 CREATE TABLE Veiculo (
