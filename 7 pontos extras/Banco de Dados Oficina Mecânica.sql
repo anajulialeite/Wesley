@@ -117,6 +117,20 @@ CREATE TABLE Pagamento (
     FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
 );
 
+CREATE TABLE FeedbackCliente (
+	IDFeedback VARCHAR(255) PRIMARY KEY,
+	IDCliente INT,
+	DataEHora DATETIME,
+	Avaliacoes VARCHAR(100),
+	Comentario VARCHAR(50),
+	ServicoAvaliado VARCHAR(50),
+	RespostaDaOficina VARCHAR(50),
+	StatusDoFeedback VARCHAR(20),
+	CanalDoFeedback VARCHAR(50),
+	AcaoTomada VARCHAR(100),
+	FOREIGN KEY (IDCliente) REFERENCES Cliente(ClienteID)
+);
+
 CREATE TABLE Contabilidade (
     IDPagamento DECIMAL(10,2) PRIMARY KEY,
     DataPagamento DATE,
