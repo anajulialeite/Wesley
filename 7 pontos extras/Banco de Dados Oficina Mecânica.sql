@@ -117,6 +117,22 @@ CREATE TABLE Pagamento (
     FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
 );
 
+CREATE TABLE RelatorioEstatistica (
+    IDRegistro INT PRIMARY KEY,
+	IDRelatorio INT,
+    IDPagamento INT,
+    TipoRegistro VARCHAR(20),
+    DataRegistro DATETIME,
+    Responsavel VARCHAR(100),
+    Departamento VARCHAR(100),
+    DadosRegistro VARCHAR(MAX),
+    ResultadosAnalises VARCHAR(MAX),
+    Observacoes VARCHAR(MAX),
+    ArquivoAnexado VARCHAR(255),
+    StatusRegistro VARCHAR(20),
+    Destinatario VARCHAR(100)
+);
+
 CREATE TABLE FeedbackCliente (
     IDFeedback VARCHAR(255) PRIMARY KEY,
     IDCliente INT,
