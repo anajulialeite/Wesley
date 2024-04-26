@@ -179,15 +179,15 @@ CREATE TABLE ControleDePermissao (
 );
 
 CREATE TABLE DocumentosImagens (
-	IDDocumentosImagens INT PRIMARY KEY,
-	IDVeiculo INT,
-	NomeArquivo VARCHAR(255),
-	TipoDocumentoImagem VARCHAR(100),
-	DataEnvioCriacao DATE,
-	Descricao VARCHAR(255),
-	Responsável VARCHAR(100),
-	Departamento VARCHAR(100),
-	Arquivo VARCHAR(MAX),
-	Status VARCHAR (20),
-	FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
+    IDDocumentosImagens INT PRIMARY KEY,
+    IDVeiculo INT,
+    NomeArquivo VARCHAR(255),
+    TipoDocumentoImagem VARCHAR(100),
+    DataEnvioCriacao DATE,
+    Descricao VARCHAR(255),
+    Responsável VARCHAR(100),
+    Departamento VARCHAR(100),
+    Arquivo VARCHAR(MAX),
+    Status VARCHAR (20),
+    FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
 );
