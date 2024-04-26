@@ -118,17 +118,17 @@ CREATE TABLE Pagamento (
 );
 
 CREATE TABLE FeedbackCliente (
-	IDFeedback VARCHAR(255) PRIMARY KEY,
-	IDCliente INT,
-	DataEHora DATETIME,
-	Avaliacoes VARCHAR(100),
-	Comentario VARCHAR(50),
-	ServicoAvaliado VARCHAR(50),
-	RespostaDaOficina VARCHAR(50),
-	StatusDoFeedback VARCHAR(20),
-	CanalDoFeedback VARCHAR(50),
-	AcaoTomada VARCHAR(100),
-	FOREIGN KEY (IDCliente) REFERENCES Cliente(ClienteID)
+    IDFeedback VARCHAR(255) PRIMARY KEY,
+    IDCliente INT,
+    DataEHora DATETIME,
+    Avaliacoes VARCHAR(100),
+    Comentario VARCHAR(50),
+    ServicoAvaliado VARCHAR(50),
+    RespostaDaOficina VARCHAR(50),
+    StatusDoFeedback VARCHAR(20),
+    CanalDoFeedback VARCHAR(50),
+    AcaoTomada VARCHAR(100),
+    FOREIGN KEY (IDCliente) REFERENCES Cliente(ClienteID)
 );
 
 CREATE TABLE Contabilidade (
@@ -144,4 +144,20 @@ CREATE TABLE Contabilidade (
     Despesa VARCHAR(100),
     Observacoes VARCHAR(MAX),
     FOREIGN KEY (IDPagamento) REFERENCES Pagamento(IDPagamento)
+);
+
+CREATE TABLE ControleDePermissao (
+    IDFuncionario INT PRIMARY KEY,
+    NomeDoUsuario VARCHAR(100),
+    Cargo VARCHAR(50),
+    NomeDeUsuarui VARCHAR(100),
+    Senha VARCHAR(255),
+    NivelDeAcesso VARCHAR(100),
+    Departamento VARCHAR(100),
+    DataEHoraDeAcesso DATETIME,
+    OperacoesRealizadas VARCHAR(100),
+    ResultadoDaOperacao VARCHAR(50),
+    IPDeAcesso VARCHAR(255),
+    AcaoDeBloqueio VARCHAR(255),
+    Observações VARCHAR(MAX),
 );
