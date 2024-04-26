@@ -15,6 +15,22 @@ CREATE TABLE Cliente (
     Observacao VARCHAR(MAX)
 );
 
+CREATE TABLE RecuperarClientesPorNome (
+    ClienteID INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Morada VARCHAR(100),
+    Telefone VARCHAR(20),
+    Email VARCHAR(100),
+    VeiculoRegistrado VARCHAR (100),
+    Placa VARCHAR(20),
+    Marca VARCHAR(100),
+    Modelo VARCHAR(100),
+    Ano INT,
+    DataDoUltimoServico DATE,
+    ProximoServicoAgendado DATE,
+    Observacao VARCHAR(MAX)
+);
+
 CREATE TABLE Veiculo (
     VeiculoID INT PRIMARY KEY,
     ClienteID INT,
