@@ -1,6 +1,6 @@
 CREATE PROCEDURE InsertRelatorioEstatistica (
     @IDRegistro INT,
-	@IDRelatorio INT = NULL,
+    @IDRelatorio INT = NULL,
     @IDPagamento INT = NULL,
     @TipoRegistro VARCHAR(20),
     @DataRegistro DATETIME,
@@ -17,7 +17,7 @@ AS
 BEGIN
     INSERT INTO RelatorioEstatistica (
         IDRegistro,
-		IDRelatorio,
+	IDRelatorio,
         IDPagamento,
         TipoRegistro,
         DataRegistro,
@@ -32,7 +32,7 @@ BEGIN
     )
     VALUES (
         @IDRegistro,
-		@IDRelatorio,
+	@IDRelatorio,
         @IDPagamento,
         @TipoRegistro,
         @DataRegistro,
