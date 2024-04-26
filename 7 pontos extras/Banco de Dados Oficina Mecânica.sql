@@ -178,8 +178,8 @@ CREATE TABLE ControleDePermissao (
     Observações VARCHAR(MAX),
 );
 
-CREATE TABLE DocumentosImagens (
-    IDDocumentosImagens INT PRIMARY KEY,
+CREATE TABLE DocumentoImagem (
+    IDDocumentoImagem INT PRIMARY KEY,
     IDVeiculo INT,
     NomeArquivo VARCHAR(255),
     TipoDocumentoImagem VARCHAR(100),
