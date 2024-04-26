@@ -1,6 +1,27 @@
 CREATE PROCEDURE RecuperarClientesPorNome
-    @NomeCliente VARCHAR(100)
+    @NomeCliente NVARCHAR(100)
 AS
 BEGIN
-    SELECT * FROM Cliente WHERE Nome = @NomeCliente
+    SET NOCOUNT ON;
+
+    SELECT 
+        IDCliente,
+        NomeCliente,
+        Endereco,
+        Telefone,
+        Email,
+        VeiculosRegistrados,
+        PlacasVeiculo,
+        MarcaVeiculo,
+        ModeloVeiculo,
+        AnoVeiculo,
+        UltimoServicoRealizado,
+        DataUltimoServico,
+        ProximoServicoAgendado,
+        DataProximoServico,
+        ObservacoesAdicionais
+    FROM 
+        Clientes
+    WHERE 
+        NomeCliente LIKE '%' + @NomeCliente + '%';
 END;
