@@ -119,7 +119,7 @@ CREATE TABLE Pagamento (
 
 CREATE TABLE RelatorioEstatistica (
     IDRegistro INT PRIMARY KEY,
-	IDRelatorio INT,
+    IDRelatorio INT,
     IDPagamento INT,
     TipoRegistro VARCHAR(20),
     DataRegistro DATETIME,
