@@ -1,4 +1,4 @@
-CREATE PROCEDURE InsertFeedbackCliente (
+CREATE PROCEDURE InserirtFeedbackCliente (
     @IDCliente INT,
     @DataEHora DATETIME,
     @Avaliacao VARCHAR(100),
@@ -11,6 +11,6 @@ CREATE PROCEDURE InsertFeedbackCliente (
 )
 AS
 BEGIN
-    INSERT INTO FeedbackDoCliente (IDCliente, DataEHora, Avaliações, Comentário, ServiçoAvaliado, RespostaDaOficina, StatusDoFeedback, CanalDoFeedback, AçãoTomada)
+    INSERT INTO FeedbackDoCliente (IDCliente, DataEHora, Avaliacoes, Comentario, ServicoAvaliado, RespostaDaOficina, StatusDoFeedback, CanalDoFeedback, AcaoTomada)
     VALUES (@IDCliente, @DataEHora, @Avaliacao, @Comentario, @ServicoAvaliado, @RespostaDaOficina, @StatusDoFeedback, @CanalDoFeedback, @AcaoTomada);
 END;
