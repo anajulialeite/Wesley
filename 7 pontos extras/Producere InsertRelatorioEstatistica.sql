@@ -1,4 +1,4 @@
-CREATE PROCEDURE InsertRelatorioEstatistica (
+CREATE PROCEDURE InserirtRelatorioEstatistica (
     @IDRegistro INT,
     @IDRelatorio INT = NULL,
     @IDPagamento INT = NULL,
