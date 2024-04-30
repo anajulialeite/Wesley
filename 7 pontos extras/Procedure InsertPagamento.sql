@@ -9,13 +9,13 @@ BEGIN
     
     IF NOT EXISTS (SELECT 1 FROM Veiculo WHERE VeiculoID = @IDVeiculo)
     BEGIN
-        PRINT 'O veÌculo especificado n„o existe na base de dados.';
+        PRINT 'O ve√≠culo especificado n√£o existe na base de dados.';
         RETURN;
     END;
 
     IF EXISTS (SELECT 1 FROM Pagamento WHERE IDPagamento = @IDPagamento)
     BEGIN
-        PRINT 'J· existe um pagamento com o ID especificado.';
+        PRINT 'J√° existe um pagamento com o ID especificado.';
         RETURN;
     END;
 
