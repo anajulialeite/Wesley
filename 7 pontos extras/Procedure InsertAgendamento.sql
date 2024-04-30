@@ -1,4 +1,4 @@
-CREATE PROCEDURE InsertAgendamento (
+CREATE PROCEDURE InserirAgendamento (
     @IDVeiculo INT,
     @DataHoraAgendada DATE,
     @Status VARCHAR(20)
@@ -8,7 +8,7 @@ BEGIN
     
     IF NOT EXISTS (SELECT 1 FROM Veiculo WHERE VeiculoID = @IDVeiculo)
     BEGIN
-        PRINT 'O veÌculo especificado n„o existe na base de dados.';
+        PRINT 'O ve√≠culo especificado n√£o existe na base de dados.';
         RETURN;
     END;
 
