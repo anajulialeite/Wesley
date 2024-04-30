@@ -1,4 +1,4 @@
-CREATE PROCEDURE InsertFuncionario
+CREATE PROCEDURE InserirFuncionario
     @Nome VARCHAR(100),
     @Morada VARCHAR(100),
     @Telefone VARCHAR(20),
