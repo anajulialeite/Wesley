@@ -109,7 +109,7 @@ CREATE TABLE Agendamento (
     FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
 );
 
-CREATE TABLE Pagamento (
+CREATE TABLE Pagamentos (
     IDPagamento DECIMAL(10,2) PRIMARY KEY,
     IDVeiculo INT,
     DataHoraAgendada DATE,
@@ -119,7 +119,7 @@ CREATE TABLE Pagamento (
 
 CREATE TABLE RelatorioEstatistica (
     IDRegistro INT PRIMARY KEY,
-    IDRelatorio INT,
+	IDRelatorio INT,
     IDPagamento INT,
     TipoRegistro VARCHAR(20),
     DataRegistro DATETIME,
@@ -133,18 +133,19 @@ CREATE TABLE RelatorioEstatistica (
     Destinatario VARCHAR(100)
 );
 
+
 CREATE TABLE FeedbackCliente (
-    IDFeedback VARCHAR(255) PRIMARY KEY,
-    IDCliente INT,
-    DataEHora DATETIME,
-    Avaliacoes VARCHAR(100),
-    Comentario VARCHAR(50),
-    ServicoAvaliado VARCHAR(50),
-    RespostaDaOficina VARCHAR(50),
-    StatusDoFeedback VARCHAR(20),
-    CanalDoFeedback VARCHAR(50),
-    AcaoTomada VARCHAR(100),
-    FOREIGN KEY (IDCliente) REFERENCES Cliente(ClienteID)
+	IDFeedback VARCHAR(255) PRIMARY KEY,
+	IDCliente INT,
+	DataEHora DATETIME,
+	Avaliacoes VARCHAR(100),
+	Comentario VARCHAR(50),
+	ServicoAvaliado VARCHAR(50),
+	RespostaDaOficina VARCHAR(50),
+	StatusDoFeedback VARCHAR(20),
+	CanalDoFeedback VARCHAR(50),
+	AcaoTomada VARCHAR(100),
+	FOREIGN KEY (IDCliente) REFERENCES Cliente(ClienteID)
 );
 
 CREATE TABLE Contabilidade (
@@ -159,35 +160,34 @@ CREATE TABLE Contabilidade (
     Funcionario INT,
     Despesa VARCHAR(100),
     Observacoes VARCHAR(MAX),
-    FOREIGN KEY (IDPagamento) REFERENCES Pagamento(IDPagamento)
 );
 
 CREATE TABLE ControleDePermissao (
-    IDFuncionario INT PRIMARY KEY,
-    NomeDoUsuario VARCHAR(100),
-    Cargo VARCHAR(50),
-    NomeDeUsuarui VARCHAR(100),
-    Senha VARCHAR(255),
-    NivelDeAcesso VARCHAR(100),
-    Departamento VARCHAR(100),
-    DataEHoraDeAcesso DATETIME,
-    OperacoesRealizadas VARCHAR(100),
-    ResultadoDaOperacao VARCHAR(50),
-    IPDeAcesso VARCHAR(255),
-    AcaoDeBloqueio VARCHAR(255),
-    Observações VARCHAR(MAX),
+	IDFuncionario INT PRIMARY KEY,
+	NomeDoUsuario VARCHAR(100),
+	Cargo VARCHAR(50),
+	NomeDeUsuario VARCHAR(100),
+	Senha VARCHAR(255),
+	NivelDeAcesso VARCHAR(100),
+	Departamento VARCHAR(100),
+	DataEHoraDeAcesso DATETIME,
+	OperacoesRealizadas VARCHAR(100),
+	ResultadoDaOperacao VARCHAR(50),
+	IPDeAcesso VARCHAR(255),
+	AcaoDeBloqueio VARCHAR(255),
+	Observacoes VARCHAR(MAX),
 );
 
 CREATE TABLE DocumentoImagem (
-    IDDocumentoImagem INT PRIMARY KEY,
-    IDVeiculo INT,
-    NomeArquivo VARCHAR(255),
-    TipoDocumentoImagem VARCHAR(100),
-    DataEnvioCriacao DATE,
-    Descricao VARCHAR(255),
-    Responsável VARCHAR(100),
-    Departamento VARCHAR(100),
-    Arquivo VARCHAR(MAX),
-    Status VARCHAR (20),
-    FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
+	IDDocumentoImagem INT PRIMARY KEY,
+	IDVeiculo INT,
+	NomeArquivo VARCHAR(255),
+	TipoDocumentoImagem VARCHAR(100),
+	DataEnvioCriacao DATE,
+	Descricao VARCHAR(255),
+	Responsavel VARCHAR(100),
+	Departamento VARCHAR(100),
+	Arquivo VARCHAR(MAX),
+	Status VARCHAR (20),
+	FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
 );
