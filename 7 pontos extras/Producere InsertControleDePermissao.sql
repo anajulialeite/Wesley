@@ -1,5 +1,5 @@
-CREATE PROCEDURE InsertControleDePermissao (
-    @FuncionarioID INT,
+CREATE PROCEDURE InserirControleDePermissao (
+    @IDFuncionario INT,
     @NomeDoUsuario VARCHAR(100),
     @Cargo VARCHAR(50),
     @NomeDeUsuario VARCHAR(100),
@@ -15,34 +15,6 @@ CREATE PROCEDURE InsertControleDePermissao (
 )
 AS
 BEGIN
-    INSERT INTO ControleDePermissao (
-        IDFuncionario,
-        NomeDoUsuario,
-        Cargo,
-        NomeDeUsuario,
-        Senha,
-        NivelDeAcesso,
-        Departamento,
-        DataEHoraDeAcesso,
-        OperacoesRealizadas,
-        ResultadoDaOperacao,
-        IPDeAcesso,
-        AcaoDeBloqueio,
-        Observacoes
-    )
-    VALUES (
-        @FuncionarioID,
-        @NomeDoUsuario,
-        @Cargo,
-        @NomeDeUsuario,
-        @Senha,
-        @NivelDeAcesso,
-        @Departamento,
-        @DataEHoraDeAcesso,
-        @OperacoesRealizadas,
-        @ResultadoDaOperacao,
-        @IPDeAcesso,
-        @AcaoDeBloqueio,
-        @Observacoes
-    );
+    INSERT INTO ControleDePermissao (IDFuncionario, NomeDoUsuario, Cargo, NomeDeUsuario, Senha, NivelDeAcesso, Departamento, DataEHoraDeAcesso, OperacoesRealizadas, ResultadoDaOperacao, IPDeAcesso, AcaoDeBloqueio, Observacoes)
+    VALUES (@IDFuncionario, @NomeDoUsuario, @Cargo, @NomeDeUsuario, @Senha, @NivelDeAcesso, @Departamento, @DataEHoraDeAcesso, @OperacoesRealizadas, @ResultadoDaOperacao, @IPDeAcesso, @AcaoDeBloqueio, @Observacoes);
 END;
