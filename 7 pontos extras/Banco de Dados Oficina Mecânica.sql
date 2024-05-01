@@ -15,23 +15,6 @@ CREATE TABLE Cliente (
     Observacao VARCHAR(MAX)
 );
 
-CREATE TABLE RecuperarClientesPorNome (
-    ClienteID INT PRIMARY KEY,
-    Nome VARCHAR(100),
-    Morada VARCHAR(100),
-    Telefone VARCHAR(20),
-    Email VARCHAR(100),
-    VeiculoRegistrado VARCHAR (100),
-    Placa VARCHAR(20),
-    Marca VARCHAR(100),
-    Modelo VARCHAR(100),
-    Ano INT,
-    DataDoUltimoServico DATE,
-    ProximoServicoAgendado DATE,
-    Observacao VARCHAR(MAX)
-    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
-);
-
 CREATE TABLE Veiculo (
     VeiculoID INT PRIMARY KEY,
     ClienteID INT,
@@ -117,35 +100,18 @@ CREATE TABLE Pagamentos (
     FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
 );
 
-CREATE TABLE RelatorioEstatistica (
-    IDRegistro INT PRIMARY KEY,
-	IDRelatorio INT,
-    IDPagamento INT,
-    TipoRegistro VARCHAR(20),
-    DataRegistro DATETIME,
-    Responsavel VARCHAR(100),
-    Departamento VARCHAR(100),
-    DadosRegistro VARCHAR(MAX),
-    ResultadosAnalises VARCHAR(MAX),
-    Observacoes VARCHAR(MAX),
-    ArquivoAnexado VARCHAR(255),
-    StatusRegistro VARCHAR(20),
-    Destinatario VARCHAR(100)
-);
-
-
 CREATE TABLE FeedbackCliente (
-	IDFeedback VARCHAR(255) PRIMARY KEY,
-	IDCliente INT,
-	DataEHora DATETIME,
-	Avaliacoes VARCHAR(100),
-	Comentario VARCHAR(50),
-	ServicoAvaliado VARCHAR(50),
-	RespostaDaOficina VARCHAR(50),
-	StatusDoFeedback VARCHAR(20),
-	CanalDoFeedback VARCHAR(50),
-	AcaoTomada VARCHAR(100),
-	FOREIGN KEY (IDCliente) REFERENCES Cliente(ClienteID)
+    IDFeedback VARCHAR(255) PRIMARY KEY,
+    IDCliente INT,
+    DataEHora DATETIME,
+    Avaliacoes VARCHAR(100),
+    Comentario VARCHAR(50),
+    ServicoAvaliado VARCHAR(50),
+    RespostaDaOficina VARCHAR(50),
+    StatusDoFeedback VARCHAR(20),
+    CanalDoFeedback VARCHAR(50),
+    AcaoTomada VARCHAR(100),
+    FOREIGN KEY (IDCliente) REFERENCES Cliente(ClienteID)
 );
 
 CREATE TABLE Contabilidade (
@@ -163,31 +129,64 @@ CREATE TABLE Contabilidade (
 );
 
 CREATE TABLE ControleDePermissao (
-	IDFuncionario INT PRIMARY KEY,
-	NomeDoUsuario VARCHAR(100),
-	Cargo VARCHAR(50),
-	NomeDeUsuario VARCHAR(100),
-	Senha VARCHAR(255),
-	NivelDeAcesso VARCHAR(100),
-	Departamento VARCHAR(100),
-	DataEHoraDeAcesso DATETIME,
-	OperacoesRealizadas VARCHAR(100),
-	ResultadoDaOperacao VARCHAR(50),
-	IPDeAcesso VARCHAR(255),
-	AcaoDeBloqueio VARCHAR(255),
-	Observacoes VARCHAR(MAX),
+    IDFuncionario INT PRIMARY KEY,
+    NomeDoUsuario VARCHAR(100),
+    Cargo VARCHAR(50),
+    NomeDeUsuario VARCHAR(100),
+    Senha VARCHAR(255),
+    NivelDeAcesso VARCHAR(100),
+    Departamento VARCHAR(100),
+    DataEHoraDeAcesso DATETIME,
+    OperacoesRealizadas VARCHAR(100),
+    ResultadoDaOperacao VARCHAR(50),
+    IPDeAcesso VARCHAR(255),
+    AcaoDeBloqueio VARCHAR(255),
+    Observacoes VARCHAR(MAX),
 );
 
 CREATE TABLE DocumentoImagem (
-	IDDocumentoImagem INT PRIMARY KEY,
-	IDVeiculo INT,
-	NomeArquivo VARCHAR(255),
-	TipoDocumentoImagem VARCHAR(100),
-	DataEnvioCriacao DATE,
-	Descricao VARCHAR(255),
-	Responsavel VARCHAR(100),
-	Departamento VARCHAR(100),
-	Arquivo VARCHAR(MAX),
-	Status VARCHAR (20),
-	FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
+    IDDocumentoImagem INT PRIMARY KEY,
+    IDVeiculo INT,
+    NomeArquivo VARCHAR(255),
+    TipoDocumentoImagem VARCHAR(100),
+    DataEnvioCriacao DATE,
+    Descricao VARCHAR(255),
+    Responsavel VARCHAR(100),
+    Departamento VARCHAR(100),
+    Arquivo VARCHAR(MAX),
+    Status VARCHAR (20),
+    FOREIGN KEY (IDVeiculo) REFERENCES Veiculo(VeiculoID)
+);
+
+CREATE TABLE RecuperarClientesPorNome (
+    ClienteID INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Morada VARCHAR(100),
+    Telefone VARCHAR(20),
+    Email VARCHAR(100),
+    VeiculoRegistrado VARCHAR (100),
+    Placa VARCHAR(20),
+    Marca VARCHAR(100),
+    Modelo VARCHAR(100),
+    Ano INT,
+    DataDoUltimoServico DATE,
+    ProximoServicoAgendado DATE,
+    Observacao VARCHAR(MAX)
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
+);
+
+CREATE TABLE RelatorioEstatistica (
+    IDRegistro INT PRIMARY KEY,
+    IDRelatorio INT,
+    IDPagamento INT,
+    TipoRegistro VARCHAR(20),
+    DataRegistro DATETIME,
+    Responsavel VARCHAR(100),
+    Departamento VARCHAR(100),
+    DadosRegistro VARCHAR(MAX),
+    ResultadosAnalises VARCHAR(MAX),
+    Observacoes VARCHAR(MAX),
+    ArquivoAnexado VARCHAR(255),
+    StatusRegistro VARCHAR(20),
+    Destinatario VARCHAR(100)
 );
