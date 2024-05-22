@@ -1,10 +1,10 @@
 CREATE PROCEDURE InserirVeiculo (
     @ClienteID INT,
     @Modelo VARCHAR(100),
-    @AnoFabricacao DATE,
-    @Chassi VARCHAR(100),
+    @AnoFabricacao YEAR,
+    @Chassi VARCHAR(17),
     @Quilometragem INT,
-    @Placa VARCHAR(20),
+    @Placa VARCHAR(7),
     @DataAquisicao DATE
 )
 AS
