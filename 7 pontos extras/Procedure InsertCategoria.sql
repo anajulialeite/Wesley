@@ -1,16 +1,17 @@
-CREATE PROCEDURE CriarTabelaCategoria()
+CREATE PROCEDURE InserirCategoria
+    @ClienteID INT,
+    @FuncionarioID INT,
+    @CustoHora DECIMAL(10, 2)
+AS
 BEGIN
-    CREATE TABLE IF NOT EXISTS Categoria (
-        idCategoria INT PRIMARY KEY,
-        ClienteID INT,
-        FuncionarioID INT,
-        CustoHora DECIMAL(10,2),
-        FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID),
-        FOREIGN KEY (FuncionarioID) REFERENCES Funcionario(FuncionarioID)
-    );
+    SET NOCOUNT ON;
+
+    DECLARE @idCategoria INT;
+
+    SELECT @idCategoria = ISNULL(MAX(idCategoria), 0) + 1 FROM Categoria;
+
+    INSERT INTO Categoria (idCategoria, ClienteID, FuncionarioID, CustoHora)
+    VALUES (@idCategoria, @ClienteID, @FuncionarioID, @CustoHora);
 END;
 
-INSERT INTO Categoria (idCategoria, ClienteID, FuncionarioID, CustoHora) VALUES 
-(1, 101, 201, 50.00),
-(2, 102, 202, 55.00),
-(3, 103, 203, 60.00);
+EXEC InserirCategoria @ClienteID = 2, @FuncionarioID = 3, @CustoHora = 50.00;
