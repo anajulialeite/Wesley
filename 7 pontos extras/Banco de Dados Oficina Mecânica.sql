@@ -7,7 +7,7 @@ CREATE TABLE Cliente (
     Nome VARCHAR(100),
     DataNascimento DATE,
     Genero VARCHAR(10),
-    CPF VARCHAR(20),
+    CPF VARCHAR(11),
     EstadoCivil VARCHAR(20),
     Observacao VARCHAR(MAX)
 );
@@ -16,10 +16,10 @@ CREATE TABLE Veiculo (
     VeiculoID INT PRIMARY KEY,
     ClienteID INT,
     Modelo VARCHAR(100),
-    AnoFabricacao DATE,
-    Chassi VARCHAR(100),
+    AnoFabricacao YEAR,
+    Chassi VARCHAR(17),
     Quilometragem INT,
-    Placa VARCHAR(20),
+    Placa VARCHAR(7),
     DataAquisicao DATE,
     FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
 );
