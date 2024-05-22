@@ -37,10 +37,11 @@ CREATE TABLE Funcionario (
 
 CREATE TABLE Categoria (
     idCategoria INT PRIMARY KEY,
-    Telefone VARCHAR(20),
-    Email VARCHAR(100),
-    Morada VARCHAR(100),
-    FOREIGN KEY (idCategoria) REFERENCES Categoria(idCategoria)
+    ClienteID INT,
+    FuncionarioID INT,
+    CustoHora DECIMAL(10,2),
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID),
+    FOREIGN KEY (FuncionarioID) REFERENCES Funcionario(FuncionarioID)
 );
 
 CREATE TABLE CustoMaoDeObra (
@@ -52,10 +53,10 @@ CREATE TABLE CustoMaoDeObra (
     MetodoDePagamento VARCHAR(50),
     NumeroDaFatura VARCHAR(100),
     Fornecedor VARCHAR(100),
-    Funcionario INT,
+    FuncionarioID INT,
     Despesa VARCHAR(100),
     Observacoes VARCHAR(MAX),
-    FOREIGN KEY (idCustoMaoDeObra) REFERENCES CustoMaoDeObra(IDCustoMaoDeObra)
+    FOREIGN KEY (FuncionarioID) REFERENCES Funcionario(FuncionarioID)
 );
 
 CREATE TABLE Reparacao (
