@@ -16,7 +16,7 @@ CREATE TABLE Veiculo (
     VeiculoID INT PRIMARY KEY,
     ClienteID INT,
     Modelo VARCHAR(100),
-    AnoFabricacao YEAR,
+    AnoFabricacao SMALLINT,
     Chassi VARCHAR(17),
     Quilometragem INT,
     Placa VARCHAR(7),
