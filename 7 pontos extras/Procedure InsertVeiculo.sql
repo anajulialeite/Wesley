@@ -13,4 +13,4 @@ BEGIN
     VALUES (@ClienteID, @Modelo, @AnoFabricacao, @Chassi, @Quilometragem, @Placa, @DataAquisicao);
 END;
 
-EXEC InserirVeiculo 1, 'Toyota Corolla', '2023-01-01', '123ABC456XYZ789', 50000, 'ABC1234', '2024-05-12';
+EXEC InserirVeiculo 1, 'Toyota Corolla', '2023', '123ABC456XYZ78900', 50000, 'ABC1234', '2024-05-12';
