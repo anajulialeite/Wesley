@@ -2,7 +2,7 @@ CREATE PROCEDURE InserirCliente (
     @Nome VARCHAR(100),
     @DataNascimento DATE,
     @Genero VARCHAR(10),
-    @CPF VARCHAR(11),
+    @CPF VARCHAR(14),
     @EstadoCivil VARCHAR(20),
     @Observacao VARCHAR(MAX)
 )
