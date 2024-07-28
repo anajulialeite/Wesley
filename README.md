@@ -6,4 +6,4 @@ Exercícios feitos em sala de aula em Banco de Dados com SQL Server, com o profe
 
 Este repositório contém atividades de prática de programação para testar nossos conhecimentos baseado no que foi ministrado em sala de aula!
 
-Como instalei o SQL Server: https://youtu.be/tZs8ZMvNzM?si=Vn_vd1t07grn61z
+Como instalei o SQL Server: https://www.youtube.com/watch?v=QOXiRS1yWhE&t=14s
