@@ -8,9 +8,8 @@ Aqui contém atividades de prática de programação para testar nossos conhecim
 
 ## Link útil
 
-Como instalei o SQL Server: https://www.youtube.com/watch?v=QOXiRS1yWhE&t=14s
+Como instalei o <a href= "https://anajulialeite.github.io/jokenpo/">SQL Server</a>
 
 ## License 
 
 [![MIT License](https://img.shields.io/badge/License-MIT-%231C003F.svg)](./LICENSE)
-
