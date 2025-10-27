@@ -6,6 +6,8 @@ Este repositório contém exercícios feitos em sala de aula em Banco de Dados c
 
 Aqui contém atividades de prática de programação para testar nossos conhecimentos baseado no que foi ministrado em sala de aula!
 
+## Link útil
+
 Como instalei o SQL Server: https://www.youtube.com/watch?v=QOXiRS1yWhE&t=14s
 
 ## License 
